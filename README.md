@@ -4,5 +4,5 @@
 - Clauses
 - Aggregrate Functions
 - Subqueries Queries
-- Correlated Queries
+- Co-related Queries
 - Joins 
