@@ -6,10 +6,9 @@ In other words, the inner query is driven by the outer query.*/
 use mydb;
 -- Subquery (Query inside query)
 SELECT * FROM mystudent where id IN (SELECT id FROM mystudent WHERE percentage>=60);
+SELECT * FROM mystudent where marks = (SELECT MAX(marks) FROM mystudent);
 
 Use rachna;
 -- Co-related query
-SELECT project_id, SUM(amount_per_day) as Sum
-FROM allocation
-Group by project_id
-HAVING SUM(amount_per_day)>=ALL(SELECT SUM(amount_per_day) FROM allocation Group by project_id);
+SELECT * FROM employees
+WHERE EXISTS(SELECT * FROM dept WHERE dept.eid=employees.eid);
